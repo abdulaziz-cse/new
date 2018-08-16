@@ -7,9 +7,9 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Edit Post #{{ $post->id }}</div>
+                    <div class="card-header">Create New Sub</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/posts') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/sub') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <br />
                         <br />
 
@@ -21,14 +21,9 @@
                             </ul>
                         @endif
 
-                        {!! Form::model($post, [
-                            'method' => 'PATCH',
-                            'url' => ['/admin/posts', $post->id],
-                            'class' => 'form-horizontal',
-                            'files' => true
-                        ]) !!}
+                        {!! Form::open(['url' => '/admin/sub', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-                        @include ('admin.posts.form', ['formMode' => 'edit'])
+                        @include ('admin.sub.form', ['formMode' => 'create'])
 
                         {!! Form::close() !!}
 

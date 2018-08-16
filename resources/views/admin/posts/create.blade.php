@@ -21,12 +21,11 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/posts') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
-                            {{ csrf_field() }}
+                        {!! Form::open(['url' => '/admin/posts', 'class' => 'form-horizontal', 'files' => true]) !!}
 
-                            @include ('admin.posts.form', ['formMode' => 'create'])
+                        @include ('admin.posts.form', ['formMode' => 'create'])
 
-                        </form>
+                        {!! Form::close() !!}
 
                     </div>
                 </div>
